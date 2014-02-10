@@ -18,12 +18,15 @@
       float: none;
       li{
         float: none;
+
       }
     }
   }
 
   .content-container{
     margin-left: 240px;
+    min-height: 800px;
+    overflow-x: hidden;
   }
 }
 

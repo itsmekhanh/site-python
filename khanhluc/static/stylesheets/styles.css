@@ -7610,13 +7610,15 @@ button.close {
     float: none;
   }
 
-  /* line 25, ../sass/styles.scss */
+  /* line 26, ../sass/styles.scss */
   .content-container {
     margin-left: 240px;
+    min-height: 800px;
+    overflow-x: hidden;
   }
 }
 @media (max-width: 768px) {
-  /* line 31, ../sass/styles.scss */
+  /* line 34, ../sass/styles.scss */
   body {
     padding-top: 50px;
   }
