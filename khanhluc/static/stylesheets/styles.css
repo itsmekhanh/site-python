@@ -7626,17 +7626,37 @@ button.close {
     width: 100%;
   }
 }
+@media (min-width: 768px) and (max-width: 1200px) {
+  /* line 44, ../sass/styles.scss */
+  #blog-container .mason-item {
+    width: 33%;
+  }
+  /* line 46, ../sass/styles.scss */
+  #blog-container .mason-item img {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  /* line 55, ../sass/styles.scss */
+  #blog-container .mason-item {
+    width: 50%;
+  }
+  /* line 57, ../sass/styles.scss */
+  #blog-container .mason-item img {
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
-  /* line 43, ../sass/styles.scss */
+  /* line 65, ../sass/styles.scss */
   body {
     padding-top: 50px;
   }
 
-  /* line 48, ../sass/styles.scss */
+  /* line 70, ../sass/styles.scss */
   #blog-container .mason-item {
     width: 100%;
   }
-  /* line 50, ../sass/styles.scss */
+  /* line 72, ../sass/styles.scss */
   #blog-container .mason-item img {
     width: 100%;
   }
