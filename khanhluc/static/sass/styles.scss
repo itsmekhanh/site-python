@@ -4,11 +4,13 @@
 
 @media (min-width: 768px){
   .navbar{
+    text-align: center;
     width: 240px;
     height: 100%;
     left: 0;
     position: fixed;
     top: 0;
+
 
     .navbar-header{
       float: none;
@@ -18,20 +20,36 @@
       float: none;
       li{
         float: none;
-
       }
     }
   }
 
   .content-container{
     margin-left: 240px;
-    min-height: 800px;
-    overflow-x: hidden;
+    height: 100%;
+  }
+
+  #blog-container{
+    .mason-item{
+      width: 25%;
+      img{
+        width: 100%;
+      }
+    }
   }
 }
 
 @media(max-width: 768px){
   body{
     padding-top: 50px;
+  }
+
+  #blog-container{
+    .mason-item{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
   }
 }

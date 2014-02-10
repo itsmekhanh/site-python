@@ -7591,35 +7591,53 @@ button.close {
 @media (min-width: 768px) {
   /* line 6, ../sass/styles.scss */
   .navbar {
+    text-align: center;
     width: 240px;
     height: 100%;
     left: 0;
     position: fixed;
     top: 0;
   }
-  /* line 13, ../sass/styles.scss */
+  /* line 15, ../sass/styles.scss */
   .navbar .navbar-header {
     float: none;
   }
-  /* line 16, ../sass/styles.scss */
+  /* line 18, ../sass/styles.scss */
   .navbar .navbar-nav {
     float: none;
   }
-  /* line 19, ../sass/styles.scss */
+  /* line 21, ../sass/styles.scss */
   .navbar .navbar-nav li {
     float: none;
   }
 
-  /* line 26, ../sass/styles.scss */
+  /* line 27, ../sass/styles.scss */
   .content-container {
     margin-left: 240px;
-    min-height: 800px;
-    overflow-x: hidden;
+    height: 100%;
+  }
+
+  /* line 33, ../sass/styles.scss */
+  #blog-container .mason-item {
+    width: 25%;
+  }
+  /* line 35, ../sass/styles.scss */
+  #blog-container .mason-item img {
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
-  /* line 34, ../sass/styles.scss */
+  /* line 43, ../sass/styles.scss */
   body {
     padding-top: 50px;
+  }
+
+  /* line 48, ../sass/styles.scss */
+  #blog-container .mason-item {
+    width: 100%;
+  }
+  /* line 50, ../sass/styles.scss */
+  #blog-container .mason-item img {
+    width: 100%;
   }
 }
