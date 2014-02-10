@@ -1,3 +1,34 @@
 // customize bootstrap variables here:
 @import "variables";
 @import "bootstrap";
+
+@media (min-width: 768px){
+  .navbar{
+    width: 240px;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+
+    .navbar-header{
+      float: none;
+    }
+    .navbar-nav{
+
+      float: none;
+      li{
+        float: none;
+      }
+    }
+  }
+
+  .content-container{
+    margin-left: 240px;
+  }
+}
+
+@media(max-width: 768px){
+  body{
+    padding-top: 50px;
+  }
+}
