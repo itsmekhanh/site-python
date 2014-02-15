@@ -11,6 +11,14 @@
     position: fixed;
     top: 0;
 
+    .navbar-brand{
+      width: 100%;
+      img{
+        width: 70%;
+      }
+      height: 200px;
+      padding-top: 60px;
+    }
 
     .navbar-header{
       float: none;
@@ -48,6 +56,13 @@
       }
     }
   }
+
+  .navbar-brand{
+    width: 60px;
+    img{
+      width: 100%;
+    }
+  }
 }
 
 @media(min-width: 768px) and (max-width: 900px){
@@ -72,6 +87,13 @@
       img{
         width: 100%;
       }
+    }
+  }
+
+  .navbar-brand{
+    width:60px;
+    img{
+      width: 100%;
     }
   }
 }

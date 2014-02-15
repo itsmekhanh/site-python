@@ -7598,66 +7598,94 @@ button.close {
     position: fixed;
     top: 0;
   }
-  /* line 15, ../sass/styles.scss */
+  /* line 14, ../sass/styles.scss */
+  .navbar .navbar-brand {
+    width: 100%;
+    height: 200px;
+    padding-top: 60px;
+  }
+  /* line 16, ../sass/styles.scss */
+  .navbar .navbar-brand img {
+    width: 70%;
+  }
+  /* line 23, ../sass/styles.scss */
   .navbar .navbar-header {
     float: none;
   }
-  /* line 18, ../sass/styles.scss */
+  /* line 26, ../sass/styles.scss */
   .navbar .navbar-nav {
     float: none;
   }
-  /* line 21, ../sass/styles.scss */
+  /* line 29, ../sass/styles.scss */
   .navbar .navbar-nav li {
     float: none;
   }
 
-  /* line 27, ../sass/styles.scss */
+  /* line 35, ../sass/styles.scss */
   .content-container {
     margin-left: 240px;
     height: 100%;
   }
 
-  /* line 33, ../sass/styles.scss */
+  /* line 41, ../sass/styles.scss */
   #blog-container .mason-item {
     width: 25%;
   }
-  /* line 35, ../sass/styles.scss */
+  /* line 43, ../sass/styles.scss */
   #blog-container .mason-item img {
     width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
-  /* line 44, ../sass/styles.scss */
+  /* line 52, ../sass/styles.scss */
   #blog-container .mason-item {
     width: 33%;
   }
-  /* line 46, ../sass/styles.scss */
+  /* line 54, ../sass/styles.scss */
   #blog-container .mason-item img {
+    width: 100%;
+  }
+
+  /* line 60, ../sass/styles.scss */
+  .navbar-brand {
+    width: 60px;
+  }
+  /* line 62, ../sass/styles.scss */
+  .navbar-brand img {
     width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 900px) {
-  /* line 55, ../sass/styles.scss */
+  /* line 70, ../sass/styles.scss */
   #blog-container .mason-item {
     width: 50%;
   }
-  /* line 57, ../sass/styles.scss */
+  /* line 72, ../sass/styles.scss */
   #blog-container .mason-item img {
     width: 100%;
   }
 }
 @media (max-width: 768px) {
-  /* line 65, ../sass/styles.scss */
+  /* line 80, ../sass/styles.scss */
   body {
     padding-top: 50px;
   }
 
-  /* line 70, ../sass/styles.scss */
+  /* line 85, ../sass/styles.scss */
   #blog-container .mason-item {
     width: 100%;
   }
-  /* line 72, ../sass/styles.scss */
+  /* line 87, ../sass/styles.scss */
   #blog-container .mason-item img {
+    width: 100%;
+  }
+
+  /* line 93, ../sass/styles.scss */
+  .navbar-brand {
+    width: 60px;
+  }
+  /* line 95, ../sass/styles.scss */
+  .navbar-brand img {
     width: 100%;
   }
 }
