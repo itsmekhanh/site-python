@@ -40,7 +40,7 @@
 
   #blog-container{
     .mason-item{
-      width: 25%;
+      width: 32%;
       img{
         width: 100%;
       }
@@ -51,7 +51,7 @@
 @media(min-width: 768px) and (max-width: 1200px){
   #blog-container{
     .mason-item{
-      width: 33%;
+      width: 49%;
       img{
         width: 100%;
       }
@@ -69,7 +69,7 @@
 @media(min-width: 768px) and (max-width: 900px){
   #blog-container{
     .mason-item{
-      width: 50%;
+      width: 49%;
       img{
         width: 100%;
       }
@@ -84,10 +84,11 @@
 
   #blog-container{
     .mason-item{
-      width: 100%;
+      width: 98%;
       img{
         width: 100%;
       }
+      margin: 5px;
     }
   }
 
@@ -98,3 +99,61 @@
     }
   }
 }
+
+.blog-title{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-family:'Oswald', sans-serif;
+  font-size: 24px;
+}
+
+iframe{
+  width: 100%;
+}
+
+
+#blog-container{
+  padding: 2px;
+
+  .mason-item{
+    margin-bottom: 10px;
+    padding: 10px;
+
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #FFFFFF;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.15),0 0 0 1px rgba(0,0,0,0.05);
+
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -kthtml-transition: all .25s linear;
+    transition: all .25s linear;
+  }
+
+  .mason-item:hover{
+
+    -webkit-box-shadow: -1px 10px 12px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 10px 12px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 10px 12px 0px rgba(0,0,0,0.75);
+
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -kthtml-transition: all .25s linear;
+    transition: all .25s linear;
+
+  }
+
+}
+
+
+
