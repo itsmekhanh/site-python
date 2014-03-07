@@ -2,8 +2,31 @@
 {% load static %}
 {% block content %}
     <div class="content-container">
-        {% for set in sets %}
-            <img src="http://farm{{ set.attrib.farm }}.static.flickr.com/{{ set.attrib.server }}/{{ set.attrib.primary }}_{{ set.attrib.secret }}_z.jpg"/>
+        <div id="blog-container">
+             {% for set in sets %}
+            <div class="mason-item">
+                <img src="http://farm{{ set.attrib.farm }}.static.flickr.com/{{ set.attrib.server }}/{{ set.attrib.primary }}_{{ set.attrib.secret }}_z.jpg"/>
+                <center><h3>{{ set.0.text }}</h3></center>
+            </div>
         {% endfor %}
+        </div>
     </div>
+    <script src="{% static "javascripts/masonry.pkgd.min.js" %}"></script>
+    <script src="{% static "javascripts/imagesloaded.pkgd.min.js" %}"></script>
+    <script>
+    $(window).ready(function(){
+        var $container = $("#blog-container");
+
+        $container.imagesLoaded(function(){
+            $container.masonry({
+                columnWidth:'.mason-item',
+                itemSelector: '.mason-item',
+                gutter: 10
+            });
+
+            var msnry = $container.data('masonry');
+        });
+    })
+
+    </script>
 {% endblock %}

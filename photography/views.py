@@ -9,6 +9,6 @@ def index(request):
     sets = flickr.photosets_getList(user_id='49585808@N08')
     children = sets.find('photosets').findall('photoset')
 
-    context = {'title':'photography', 'sets': children}
+    context = {'photography':True, 'sets': children, 'title': "Photography"}
 
     return render(request, 'photography/index.html', context)

@@ -7735,13 +7735,23 @@ iframe {
 }
 /* line 141, ../sass/styles.scss */
 #blog-container .mason-item:hover {
-  -webkit-box-shadow: -1px 10px 12px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 10px 12px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 10px 12px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-transition: all .25s linear;
   -o-transition: all .25s linear;
   -moz-transition: all .25s linear;
   -ms-transition: all .25s linear;
   -kthtml-transition: all .25s linear;
   transition: all .25s linear;
+}
+/* line 156, ../sass/styles.scss */
+#blog-container .no-border {
+  margin-bottom: 0px;
+  padding: 0px;
+  -moz-box-sizing: border-box;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
 }
