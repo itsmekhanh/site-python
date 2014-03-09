@@ -1,6 +1,8 @@
 from django.shortcuts import render, render_to_response
-from django.utils.datetime_safe import strftime
-import pytumblr, time
+import datetime
+import json
+import pytumblr
+
 
 api_key = "b3ceq6L4SAk28pxX0gpUsXZrcgtQlv82Uakpx6Ki2GIlSn5eNY"
 tumblrName = "khanhluc.tumblr.com"
@@ -20,21 +22,49 @@ def index(request):
                 }
             }
 
-    date = {}
+    date = []
 
     for post in posts[u'posts']:
         entry = {
-            "startDate":strftime("%Y,%m,%d", post[u'timestamp']),
-            "headline":"",
-            "text":post[u'text']
+            "startDate": (datetime.datetime.fromtimestamp(post[u'timestamp'])).strftime("%Y,%m,%d"),
+            "headline": "",
         }
+
         if post[u'type'] == u'video':
+            entry["text"] = post[u'caption']
             entry["asset"] = {
                 "media":post[u'permalink_url']
             }
+        elif post[u'type'] == u'text':
+            entry["headline"] = post[u'title']
+            entry["text"] = post[u'body']
+        elif post[u'type'] == u'quote':
+            entry["text"] = "\""+post[u'text']+"\""
+            entry["headline"] = post[u'source']
+        elif post[u'type'] == u'audio':
+            entry["headline"] = post[u'track_name']
+            entry["asset"] = {
+                "media": post[u'embed'],
+            }
+        elif post[u'type'] == u'photo':
+            entry["text"] = post[u'caption']
+            entry["asset"] = {
+                "media": post[u'photos'][0][u'alt_sizes'][1][u'url']
+            }
+        elif post[u'type'] == u'link':
+            entry["headline"] = post[u'title']
+            entry["text"] = post[u'description']
+            entry["asset"] = {
+                "media": post[u'url']
+            }
 
+        date.append(entry)
 
-    context = {"title": "Blog", "posts": posts[u'posts'], "blog": True}
+    data["timeline"]["date"] = date
+
+    timeline = json.dumps(data)
+
+    context = {"title": "Blog", "timeline": timeline, "blog": True}
     return render(request, 'blog/index.html', context)
 
 def page(request):

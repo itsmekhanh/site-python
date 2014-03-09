@@ -35,10 +35,13 @@
 
   .content-container{
     margin-left: 240px;
-    height: 100%;
+    border-left-style: solid;
+    border-left-width: .5px;
+    border-left-color: #DDDDDD;
   }
 
   #blog-container{
+    background-color: #EFEFEF;
     .mason-item{
       width: 32%;
       img{
@@ -51,7 +54,7 @@
 @media(min-width: 768px) and (max-width: 1200px){
   #blog-container{
     .mason-item{
-      width: 49%;
+      width: 48%;
       img{
         width: 100%;
       }
@@ -69,7 +72,7 @@
 @media(min-width: 768px) and (max-width: 900px){
   #blog-container{
     .mason-item{
-      width: 49%;
+      width: 48%;
       img{
         width: 100%;
       }
@@ -114,7 +117,7 @@ iframe{
 
 
 #blog-container{
-  padding: 2px;
+  padding: 4px;
 
   .mason-item{
     margin-bottom: 10px;
@@ -164,8 +167,9 @@ iframe{
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
   }
-
 }
+
+html { height: 100%; }
 
 
 
