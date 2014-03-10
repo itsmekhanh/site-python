@@ -20,7 +20,7 @@ def gallery(request, gallery_id):
     flickr = flickrapi.FlickrAPI(api_key, format='etree')
     try:
         set = flickr.photosets_getPhotos(photoset_id=gallery_id)
-        context = {"set": set}
+        context = {"set": set, "photography":True, "title":set._children[0].attrib["title"]}
         return render(request, 'photography/gallery.html', context)
     except flickrapi.FlickrError:
         return render(request, 'main/index.html')
