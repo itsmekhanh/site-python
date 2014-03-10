@@ -7763,6 +7763,32 @@ iframe {
 }
 
 /* line 172, ../sass/styles.scss */
+#imagelightbox {
+  position: fixed;
+  z-index: 9999;
+  background-color: black;
+  -webkit-box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75);
+  /* 50 */
+  -moz-box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75);
+  /* 50 */
+  box-shadow: 0 0 3.125em rgba(0, 0, 0, 0.75);
+  /* 50 */
+}
+
+/* line 182, ../sass/styles.scss */
+#imagelightbox-overlay {
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+
+/* line 194, ../sass/styles.scss */
 html {
   height: 100%;
 }

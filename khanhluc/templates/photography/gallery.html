@@ -4,15 +4,18 @@
     <div class="content-container">
         <div id="blog-container">
             {% for image in set.0 %}
-                <div class="mason-item no-border">
-                    <img src="http://farm{{ image.attrib.farm }}.staticflickr.com/{{ image.attrib.server }}/{{ image.attrib.id }}_{{ image.attrib.secret }}_b.jpg"/>
-                </div>
+                <a href="http://farm{{ image.attrib.farm }}.staticflickr.com/{{ image.attrib.server }}/{{ image.attrib.id }}_{{ image.attrib.secret }}_c.jpg" class="img-lightbox">
+                    <div class="mason-item no-border">
+                        <img src="http://farm{{ image.attrib.farm }}.staticflickr.com/{{ image.attrib.server }}/{{ image.attrib.id }}_{{ image.attrib.secret }}_z.jpg"/>
+                    </div>
+                </a>
             {% endfor %}
         </div>
     </div>
-
+    <div id="imagelightbox-overlay"></div>
     <script src="{% static "javascripts/masonry.pkgd.min.js" %}"></script>
     <script src="{% static "javascripts/imagesloaded.pkgd.min.js" %}"></script>
+    <script src="{% static "javascripts/imagelightbox.min.js" %}"></script>
     <script>
     $(window).ready(function(){
         var $container = $("#blog-container");
@@ -25,6 +28,11 @@
             });
 
             var msnry = $container.data('masonry');
+        });
+
+        $('.img-lightbox').imageLightbox({
+            onStart:    function(){ $("#imagelightbox-overlay").fadeToggle();},
+            onEnd:          function(){ $("#imagelightbox-overlay").fadeToggle();}
         });
     })
 
