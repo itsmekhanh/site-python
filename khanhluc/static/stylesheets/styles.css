@@ -7753,7 +7753,7 @@ iframe {
 }
 /* line 159, ../sass/styles.scss */
 #blog-container .no-border {
-  margin-bottom: 0px;
+  margin-bottom: 5px;
   padding: 0px;
   -moz-box-sizing: border-box;
   background: none repeat scroll 0 0 #FFFFFF;
