@@ -7789,6 +7789,11 @@ iframe {
 }
 
 /* line 194, ../sass/styles.scss */
+.title h2 {
+  font-family: 'Yellowtail', cursive;
+}
+
+/* line 199, ../sass/styles.scss */
 html {
   height: 100%;
 }

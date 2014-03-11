@@ -3,10 +3,12 @@
 <html>
 <head>
     <title>Khanh Luc - {{ title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static "stylesheets/styles.css" %}"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div class="navbar navbar-fixed-top navbar-default" role="navigation">
@@ -17,13 +19,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img src="{% static "images/logo.png" %}"/></a>
+          <div class="title"><h2>khanh luc</h2></div>
+          <a class="navbar-brand" href="/"><img class="img-circle" style="border-style: solid; border-width: 1px; border-color: #EEE;" src="{% static "images/profile.png" %}"/></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="{{ blog |yesno:"active,," }}"><a href="/blog/">Blog</a></li>
             <li class="{{ photography |yesno:"active,," }}"><a href="/photography/">Photography</a></li>
-            <li class="{{ contact |yesno:"active,," }}"><a href="#contact">Contact</a></li>
           </ul>
         </div>
     </div>
