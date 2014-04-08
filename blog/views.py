@@ -32,9 +32,15 @@ def index(request):
 
         if post[u'type'] == u'video':
             entry["text"] = post[u'caption']
-            entry["asset"] = {
-                "media":post[u'permalink_url']
-            }
+
+            if u'permalink_url' in post:
+                entry["asset"] = {
+                    "media": post[u'permalink_url']
+                }
+            else:
+                player = post[u'player']
+                entry["text"] = player[0]['embed_code']
+
         elif post[u'type'] == u'text':
             entry["headline"] = post[u'title']
             entry["text"] = post[u'body']
