@@ -1,32 +1,15 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static "stylesheets/superslides.css" %}"/>
-    <div class="content-container">
-        <div id="slides">
-            <div class="slides-container">
-                <img src="http://farm9.staticflickr.com/8216/8382189129_1621a9a208_k.jpg">
-                <img src="http://farm9.staticflickr.com/8080/8383258874_e2ce8e8777_h.jpg">
-                <img src="http://farm8.staticflickr.com/7081/7332915338_6dce52e442_h.jpg">
-                <img src="http://farm9.staticflickr.com/8018/7483704532_08e1ac1398_k.jpg">
-                <img src="http://farm9.staticflickr.com/8495/8383232804_da2b71e4b8_h.jpg">
-                <img src="http://farm9.staticflickr.com/8010/7332745428_b8e71cac8e_k.jpg">
-                <img src="http://farm9.staticflickr.com/8473/8383291418_ce63b45551_h.jpg">
-                <img src="http://farm4.staticflickr.com/3704/9511115391_ff1868d68e_h.jpg">
-                <img src="http://farm8.staticflickr.com/7086/7332924580_c5d3b83291_h.jpg">
-                <img src="http://farm9.staticflickr.com/8465/8382182563_b957ca5456_h.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-circle img-responsive" src="{% static "images/me.jpg" %}"/>
             </div>
+            <div class="col-lg-8">
+                <div class="text">Hello! I am a software engineer currently based in the Bay Area. When I'm not writing code on my laptop, you will find me </div>
+            </div>
+
         </div>
     </div>
-    <script src="{% static "javascripts/jquery.superslides.min.js" %}"></script>
-    <script>
-    $(function() {
-      $('#slides').superslides({
-        animation: 'fade',
-        play: 5000,
-        pagination: false
-      });
-    });
-
-    </script>
 {% endblock %}
