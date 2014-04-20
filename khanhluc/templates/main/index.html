@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static "stylesheets/glide.css" %}">
+    <link rel="stylesheet" href="{% static "stylesheets/responsiveslides.css" %}">
     <div id="slider">
-        <ul class="slides">
-            <li class="slide"><img src="https://farm4.staticflickr.com/3673/9513909406_d54b3830da_k.jpg"></li>
-            <li class="slide"><img src="https://farm4.staticflickr.com/3725/9013015983_a0eecb941b_k.jpg"></li>
-            <li class="slide"><img src="https://farm9.staticflickr.com/8216/8382189129_1621a9a208_k.jpg"></li>
+        <ul class="rslides">
+            <li><img src="https://farm4.staticflickr.com/3812/9013166399_8e8bd56f5c_h.jpg"></li>
+            <li><img src="https://farm9.staticflickr.com/8075/8382164063_13300c786c_h.jpg"></li>
+            <li><img src="https://farm9.staticflickr.com/8465/8382182563_b957ca5456_h.jpg"></li>
         </ul>
     </div>
     <div class="container">
@@ -15,13 +15,29 @@
                 <img class="img-circle img-responsive" src="{% static "images/me.jpg" %}"/>
             </div>
             <div class="col-lg-8">
-                <div class="text">Hello! I am a software engineer currently based in the Bay Area. When I'm not writing code on my laptop, you will find me </div>
+                <h2 class="text">
+                    Hello! I am a software engineer currently based in the Bay Area. When I'm not writing code on my laptop, you will find me snapping photos and hosting them here on this site.
+                </h2>
+                <h2>
+                    Please visit often to check out new galleries!
+                </h2>
             </div>
+        </div>
 
+        <hr class="divider">
+        <div class="row">
+            <div class="text-center"><h1>Featured Galleries</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"><h1>Gallery 1</h1></div>
+            <div class="col-lg-4"><h1>Gallery 2</h1></div>
+            <div class="col-lg-4"><h1>Gallery 3</h1></div>
         </div>
     </div>
-    <script src="{% static "javascripts/jquery.glide.min.js" %}"></script>
+    <script src="{% static "javascripts/responsiveslides.min.js" %}"></script>
     <script>
-    $('#slider').glide();
-</script>
+      $(function() {
+        $(".rslides").responsiveSlides();
+      });
+    </script>
 {% endblock %}
