@@ -1,6 +1,14 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
+    <link rel="stylesheet" href="{% static "stylesheets/glide.css" %}">
+    <div id="slider">
+        <ul class="slides">
+            <li class="slide"><img src="https://farm4.staticflickr.com/3673/9513909406_d54b3830da_k.jpg"></li>
+            <li class="slide"><img src="https://farm4.staticflickr.com/3725/9013015983_a0eecb941b_k.jpg"></li>
+            <li class="slide"><img src="https://farm9.staticflickr.com/8216/8382189129_1621a9a208_k.jpg"></li>
+        </ul>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -12,4 +20,8 @@
 
         </div>
     </div>
+    <script src="{% static "javascripts/jquery.glide.min.js" %}"></script>
+    <script>
+    $('#slider').glide();
+</script>
 {% endblock %}

@@ -1,0 +1,75 @@
+/* line 3, ../sass/glide.scss */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+/* line 10, ../sass/glide.scss */
+.slides {
+  height: 100%;
+  /* Clear fix */
+  overflow: hidden;
+  *zoom: 1;
+  /**
+   * Prevent blinking issue
+   * Not tested. Experimental.
+   */
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+}
+
+/* line 24, ../sass/glide.scss */
+.slide {
+  height: 100%;
+  float: left;
+  clear: none;
+}
+
+/* line 33, ../sass/glide.scss */
+.slider-arrow {
+  position: absolute;
+  display: block;
+  margin-bottom: -20px;
+  padding: 20px;
+}
+
+/* line 40, ../sass/glide.scss */
+.slider-arrow--right {
+  bottom: 50%;
+  right: 30px;
+}
+
+/* line 41, ../sass/glide.scss */
+.slider-arrow--left {
+  bottom: 50%;
+  left: 30px;
+}
+
+/* line 44, ../sass/glide.scss */
+.slider-nav {
+  position: absolute;
+  bottom: 30px;
+}
+
+/* line 49, ../sass/glide.scss */
+.slider-nav__item {
+  width: 12px;
+  height: 12px;
+  float: left;
+  clear: none;
+  display: block;
+  margin: 0 5px;
+  background: #fff;
+}
+
+/* line 59, ../sass/glide.scss */
+.slider-nav__item:hover {
+  background: #ccc;
+}
+
+/* line 60, ../sass/glide.scss */
+.slider-nav__item--current {
+  background: #ccc;
+}
