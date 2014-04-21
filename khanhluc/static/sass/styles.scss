@@ -3,5 +3,18 @@
 @import "bootstrap";
 
 body{
-  padding-top: 50px;
+  padding-top: 40px;
+}
+
+.main-img{
+  width: 100%;
+}
+
+.panel-footer{
+  background-color: #282828;
+  border-top: 1px solid #DDDDDD;
+  padding: 10px 15px;
+  color: #FFF;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

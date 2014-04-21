@@ -9,29 +9,17 @@
             <li><img src="https://farm9.staticflickr.com/8465/8382182563_b957ca5456_h.jpg"></li>
         </ul>
     </div>
-    <div class="container">
+    <div class="container" style="padding-bottom: 40px;">
         <div class="row">
-            <div class="col-lg-4">
-                <img class="img-circle img-responsive" src="{% static "images/me.jpg" %}"/>
-            </div>
-            <div class="col-lg-8">
-                <h2 class="text">
-                    Hello! I am a software engineer currently based in the Bay Area. When I'm not writing code on my laptop, you will find me snapping photos and hosting them here on this site.
-                </h2>
-                <h2>
-                    Please visit often to check out new galleries!
-                </h2>
-            </div>
-        </div>
-
-        <hr class="divider">
-        <div class="row">
-            <div class="text-center"><h1>Featured Galleries</h1></div>
+            <h2 class="text-center">Featured Galleries</h2>
         </div>
         <div class="row">
-            <div class="col-lg-4"><h1>Gallery 1</h1></div>
-            <div class="col-lg-4"><h1>Gallery 2</h1></div>
-            <div class="col-lg-4"><h1>Gallery 3</h1></div>
+            {% for gallery in featuredGalleries %}
+                <div class="col-lg-4">
+                    <img class="main-img" src="http://farm{{ gallery.attrib.farm }}.static.flickr.com/{{ gallery.attrib.server }}/{{ gallery.attrib.primary }}_{{ gallery.attrib.secret }}_z.jpg"/>
+                    <h4 class="text-center">{{ gallery.0.text }}</h4>
+                </div>
+            {% endfor %}
         </div>
     </div>
     <script src="{% static "javascripts/responsiveslides.min.js" %}"></script>
