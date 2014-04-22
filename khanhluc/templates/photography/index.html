@@ -1,37 +1,30 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
+    <script src="{% static "javascripts/jquery.adaptive-backgrounds.min.js" %}"></script>
     <div class="content-container">
-        <div id="blog-container">
+        <div id="gallery-container">
             {% for set in sets %}
-            <a href="/photography/gallery/{{ set.attrib.id }}/{{ set.0.text | slugify }}">
-                <div class="mason-item">
-                    <img src="http://farm{{ set.attrib.farm }}.static.flickr.com/{{ set.attrib.server }}/{{ set.attrib.primary }}_{{ set.attrib.secret }}_z.jpg"/>
-                    <center><h3>{{ set.0.text }}</h3></center>
-
+                <div class="gallery" style="background-color: {% cycle "#668284" "#493736" "#7B3B3B" "#607848" %}">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a href="/photography/gallery/{{ set.attrib.id }}/{{ set.0.text | slugify }}"><img class="img-responsive" src="http://farm{{ set.attrib.farm }}.static.flickr.com/{{ set.attrib.server }}/{{ set.attrib.primary }}_{{ set.attrib.secret }}_z.jpg" /></a>
+                            </div>
+                            <div class="col-lg-6">
+                                <h1>{{ set.0.text }}</h1>
+                                {% if set.1.text %}
+                                    <p>{{ set.1.text }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             </a>
-
         {% endfor %}
         </div>
     </div>
 
-    <script src="{% static "javascripts/masonry.pkgd.min.js" %}"></script>
-    <script src="{% static "javascripts/imagesloaded.pkgd.min.js" %}"></script>
     <script>
-    $(window).ready(function(){
-        var $container = $("#blog-container");
-
-        $container.imagesLoaded(function(){
-            $container.masonry({
-                columnWidth:'.mason-item',
-                itemSelector: '.mason-item',
-                gutter: 10
-            });
-
-            var msnry = $container.data('masonry');
-        });
-    })
 
     </script>
 {% endblock %}

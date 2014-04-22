@@ -17,7 +17,7 @@
             {% for gallery in featuredGalleries %}
                 <div class="col-lg-4">
                     <a href="/photography/gallery/{{ gallery.attrib.id }}/{{ gallery.0.text | slugify }}"><img class="main-img" src="http://farm{{ gallery.attrib.farm }}.static.flickr.com/{{ gallery.attrib.server }}/{{ gallery.attrib.primary }}_{{ gallery.attrib.secret }}_z.jpg"/></a>
-                    <h4 class="text-center">{{ gallery.0.text }}</h4>
+                    <h4 class="text-center" style="color: dimgray">{{ gallery.0.text }}</h4>
                 </div>
             {% endfor %}
         </div>
