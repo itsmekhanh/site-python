@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
     <script src="{% static "javascripts/jquery.adaptive-backgrounds.min.js" %}"></script>
-    <div class="content-container">
         <div id="gallery-container">
             {% for set in sets %}
                 <div class="gallery" style="background-color: {% cycle "#668284" "#493736" "#7B3B3B" "#607848" %}">
@@ -22,7 +21,6 @@
                 </div>
         {% endfor %}
         </div>
-    </div>
 
     <script>
 
