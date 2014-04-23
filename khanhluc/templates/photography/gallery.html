@@ -20,7 +20,7 @@
         $(function(){
             $('a').imageLightbox(
                 {
-                    onStart: function(){ $("#imagelightbox-overlay").fadeIn(); },
+                    onStart: function(){ $("#imagelightbox-overlay").show(); },
                     onEnd: function(){ $("#imagelightbox-overlay").fadeOut(); },
                     onLoadStart: function(){$("#imagelightbox-loading").show();},
                     onLoadEnd: function(){$("#imagelightbox-loading").hide();}
