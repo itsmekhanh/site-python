@@ -7912,29 +7912,40 @@ body {
 }
 
 /* For blog masonry */
-/* line 212, ../sass/styles.scss */
+/* line 211, ../sass/styles.scss */
+#blog-container {
+  background-image: url("../images/random_grey_variations.png");
+}
+/* line 214, ../sass/styles.scss */
 #blog-container .item {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   width: 33.33%;
 }
-/* line 216, ../sass/styles.scss */
+/* line 217, ../sass/styles.scss */
 #blog-container .item img {
   width: 100%;
 }
-/* line 219, ../sass/styles.scss */
+/* line 220, ../sass/styles.scss */
 #blog-container .item iframe {
   width: 100%;
 }
 @media screen and (max-width: 1024px) {
-  /* line 212, ../sass/styles.scss */
+  /* line 214, ../sass/styles.scss */
   #blog-container .item {
     width: 50%;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 212, ../sass/styles.scss */
+  /* line 214, ../sass/styles.scss */
   #blog-container .item {
     width: 100%;
   }
+}
+/* line 236, ../sass/styles.scss */
+#blog-container .item .item-inner {
+  background-color: white;
+  padding: 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }

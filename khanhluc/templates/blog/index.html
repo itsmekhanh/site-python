@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
-    <div class="featured-post">
-
-    </div>
-    <div id="blog-container" style="margin-top: 40px;">
+    <div id="blog-container" style="padding-top: 20px;">
         {% for post in posts %}
             <div class="item">
-                {{ post.content | safe }}
+                <div class="item-inner">
+                    {{ post.content | safe }}
+                    {{ post.caption | safe }}
+                </div>
             </div>
         {% endfor %}
     </div>
