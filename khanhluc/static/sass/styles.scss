@@ -179,29 +179,39 @@ body{
 	#imagelightbox-close,
 	#imagelightbox-caption,
 	#imagelightbox-nav
-	{
-		-webkit-animation: fade-in .25s linear;
-		-moz-animation: fade-in .25s linear;
-		-o-animation: fade-in .25s linear;
-		animation: fade-in .25s linear;
-	}
-		@-webkit-keyframes fade-in
-		{
-			from	{ opacity: 0; }
-			to		{ opacity: 1; }
-		}
-		@-moz-keyframes fade-in
-		{
-			from	{ opacity: 0; }
-			to		{ opacity: 1; }
-		}
-		@-o-keyframes fade-in
-		{
-			from	{ opacity: 0; }
-			to		{ opacity: 1; }
-		}
-		@keyframes fade-in
-		{
-			from	{ opacity: 0; }
-			to		{ opacity: 1; }
-		}
+{
+    -webkit-animation: fade-in .25s linear;
+    -moz-animation: fade-in .25s linear;
+    -o-animation: fade-in .25s linear;
+    animation: fade-in .25s linear;
+}
+@-webkit-keyframes fade-in
+{
+    from	{ opacity: 0; }
+    to		{ opacity: 1; }
+}
+@-moz-keyframes fade-in
+{
+    from	{ opacity: 0; }
+    to		{ opacity: 1; }
+}
+@-o-keyframes fade-in
+{
+    from	{ opacity: 0; }
+    to		{ opacity: 1; }
+}
+@keyframes fade-in
+{
+    from	{ opacity: 0; }
+    to		{ opacity: 1; }
+}
+
+/* For blog masonry */
+.item{
+  img{
+    width: 100%;
+  }
+  iframe{
+    width: 100%;
+  }
+}
