@@ -7912,11 +7912,29 @@ body {
 }
 
 /* For blog masonry */
-/* line 211, ../sass/styles.scss */
-.item img {
+/* line 212, ../sass/styles.scss */
+#blog-container .item {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 33.33%;
+}
+/* line 216, ../sass/styles.scss */
+#blog-container .item img {
   width: 100%;
 }
-/* line 214, ../sass/styles.scss */
-.item iframe {
+/* line 219, ../sass/styles.scss */
+#blog-container .item iframe {
   width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  /* line 212, ../sass/styles.scss */
+  #blog-container .item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 212, ../sass/styles.scss */
+  #blog-container .item {
+    width: 100%;
+  }
 }

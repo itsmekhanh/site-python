@@ -207,11 +207,29 @@ body{
 }
 
 /* For blog masonry */
-.item{
-  img{
-    width: 100%;
-  }
-  iframe{
-    width: 100%;
+
+#blog-container{
+  .item{
+    padding-left: 10px;
+    padding-right: 10px;
+
+    img{
+      width: 100%;
+    }
+    iframe{
+      width: 100%;
+    }
+
+    width: 33.33%;
+
+
+
+    @media screen and (max-width: 1024px){
+      width: 50%;
+    }
+
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
   }
 }
