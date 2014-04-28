@@ -1,20 +1,30 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
-    <div class="content-container" style="background-color: #FFF">
-        <div id="timeline">
-        </div>
+    <div class="featured-post">
+
     </div>
-    <script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
+    <div class="container" style="margin-top: 40px;">
+        {% for post in posts %}
+            {%  if forloop.first %}
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            {{ post.content | safe }}
+                        </div>
+                        <div class="col-lg-6">
+                            {% if post.title %}
+                            <h3>{{ post.title }}</h3>
+                            {% endif %}
+                            <h4><span class="{{ post.icon }}"></span>{{ post.timestamp|date }}</h4>
+                            <p>{{ post.caption | safe }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
     <script>
-        var storyjs_jsonp_data = {{ timeline|safe }};
-        createStoryJS({
-            type:           'timeline',
-            width:          '100%',
-            height:         $(window).height(),
-            start_at_end:   true,
-            source:         storyjs_jsonp_data,
-            embed_id:       'timeline'
-        });
+
     </script>
 {% endblock %}

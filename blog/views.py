@@ -13,64 +13,46 @@ def index(request):
     client = pytumblr.TumblrRestClient(
         consumer_key=api_key,
     )
-    posts = client.posts(tumblrName, filter='text', limit=limit)
-    data = {"timeline":
-                {
-                    "headline": "Live, Love, Learn",
-                    "type": "default",
-                    "text": "The Life of a Photogrammer",
-                }
-            }
+    posts = client.posts(tumblrName, type='video', limit=limit, offset=2)
 
-    date = []
+    formattedPosts = []
 
     for post in posts[u'posts']:
-        entry = {
-            "startDate": (datetime.datetime.fromtimestamp(post[u'timestamp'])).strftime("%Y,%m,%d"),
-            "headline": "",
-        }
+        entry = {}
+
+        entry["date"] = post[u'date']
+        entry["timestamp"] = datetime.datetime.fromtimestamp(post[u'timestamp'])
+        entry["slug"] = post[u'slug']
+        entry["reblog_key"] = post[u'reblog_key']
+        entry["short_url"] = post[u'short_url']
+        entry["type"] = post[u'type']
 
         if post[u'type'] == u'video':
-            entry["text"] = post[u'caption']
-
-            if u'permalink_url' in post:
-                entry["asset"] = {
-                    "media": post[u'permalink_url']
-                }
-            else:
-                player = post[u'player']
-                entry["text"] = player[0]['embed_code']
+            entry["caption"] = post[u'caption']
+            player = post[u'player']
+            entry["content"] = player[2]['embed_code']
+            entry["icon"] = "glyphicon glyphicon-film"
 
         elif post[u'type'] == u'text':
-            entry["headline"] = post[u'title']
-            entry["text"] = post[u'body']
+            entry["title"] = post[u'title']
+            entry["content"] = post[u'body']
         elif post[u'type'] == u'quote':
-            entry["text"] = "\""+post[u'text']+"\""
-            entry["headline"] = post[u'source']
+            entry["content"] = "\""+post[u'text']+"\""
+            entry["source"] = post[u'source']
         elif post[u'type'] == u'audio':
-            entry["headline"] = post[u'track_name']
-            entry["asset"] = {
-                "media": post[u'embed'],
-            }
+            entry["title"] = post[u'track_name']
+            entry["content"] = post[u'embed']
         elif post[u'type'] == u'photo':
-            entry["text"] = post[u'caption']
-            entry["asset"] = {
-                "media": post[u'photos'][0][u'alt_sizes'][1][u'url']
-            }
+            entry["caption"] = post[u'caption']
+            entry["content"] = "<img src=\""+post[u'photos'][0][u'alt_sizes'][1][u'url']+"\"/>"
         elif post[u'type'] == u'link':
-            entry["headline"] = post[u'title']
-            entry["text"] = post[u'description']
-            entry["asset"] = {
-                "media": post[u'url']
-            }
+            entry["title"] = post[u'title']
+            entry["content"] = post[u'description']
+            entry["url"] = post[u'url']
 
-        date.append(entry)
+        formattedPosts.append(entry)
 
-    data["timeline"]["date"] = date
-
-    timeline = json.dumps(data)
-
-    context = {"title": "Blog", "timeline": timeline, "blog": True}
+    context = {"title": "Blog", "posts": formattedPosts, "blog": True}
     return render(request, 'blog/index.html', context)
 
 def page(request):
