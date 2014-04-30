@@ -209,7 +209,7 @@ body{
 /* For blog masonry */
 
 #blog-container{
-  background-image: url("../images/random_grey_variations.png");
+  background-image: url("../images/denim.png");
 
   .item{
     padding: 10px;
@@ -239,6 +239,14 @@ body{
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;
       border-radius: 4px;
+    }
+
+    .item-footer{
+      font-size: 12px;
+      .posted-title{
+        color: gray;
+      }
+      padding-top: 8px;
     }
   }
 }

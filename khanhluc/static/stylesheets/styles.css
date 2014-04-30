@@ -7914,7 +7914,7 @@ body {
 /* For blog masonry */
 /* line 211, ../sass/styles.scss */
 #blog-container {
-  background-image: url("../images/random_grey_variations.png");
+  background-image: url("../images/denim.png");
 }
 /* line 214, ../sass/styles.scss */
 #blog-container .item {
@@ -7948,4 +7948,13 @@ body {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+/* line 244, ../sass/styles.scss */
+#blog-container .item .item-footer {
+  font-size: 12px;
+  padding-top: 8px;
+}
+/* line 246, ../sass/styles.scss */
+#blog-container .item .item-footer .posted-title {
+  color: gray;
 }

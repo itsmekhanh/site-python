@@ -2,20 +2,41 @@
 {% load static %}
 {% block content %}
     <div id="blog-container" style="padding-top: 20px;">
-        {% for post in posts %}
-            <div class="item">
-                <div class="item-inner">
-                    {{ post.content | safe }}
-                    {{ post.caption | safe }}
-                </div>
-            </div>
-        {% endfor %}
+        {% include "blog/posts.html" %}
+    </div>
+    <div id="page-nav">
+        <a href="/blog/2"></a>
     </div>
     <script src="{% static "javascripts/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "javascripts/imagesloaded.pkgd.min.js"%}"></script>
+    <script src="{% static "javascripts/jquery.infinitescroll.min.js" %}"></script>
     <script>
-        $("#blog-container").isotope({
-            itemSelector: '.item',
-            isAnimated: false
-        })
+        var $container = $("#blog-container").imagesLoaded(function(){
+           $container.isotope({
+                itemSelector: '.item',
+                isAnimated: false
+            });
+        });
+
+        $container.infinitescroll({
+            navSelector: "#page-nav",
+            nextSelector: "#page-nav a",
+            itemSelector: ".item",
+            bufferPx: 250,
+            loading: {
+                finishedMsg: "No more posts to load.",
+                img: 'http://i.imgur.com/6RMhx.gif',
+                msgText: '<em>Loading the next set of posts...</em>'
+            }},
+            function(newElements){
+
+                var $newElements = $(newElements).css({opacity: 0});
+
+                $newElements.imagesLoaded(function(){
+                    $newElements.animate({opacity: 1});
+                    $container.isotope('appended', $newElements, true);
+                });
+            }
+        );
     </script>
 {% endblock %}

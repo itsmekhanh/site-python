@@ -1,24 +1,11 @@
 {% for post in posts %}
-    <div class="mason-item no-border">
-        {% if post.type == 'video' %}
-           <img src="{{ post.thumbnail_url }}"/>
-
-        {% elif post.type == 'text' %}
-            <div class="blog-title"><p>{{ post.title }}</p></div>
-
-        {% elif post.type == 'photo' %}
-            <img src="{{ post.photos.0.alt_sizes.1.url }}"/>
-
-        {% elif post.type == 'audio' %}
-            {% if post.album_art != null %}
-                <img src="{{ post.album_art }}"/>
-            {%  endif %}
-            <div class="audio-embed">
-                {{ post.embed | safe }}
+    <div class="item">
+        <div class="item-inner">
+            {{ post.content | safe }}
+            {{ post.caption | safe }}
+            <div class="item-footer">
+                <span class="posted-title">Posted </span>{{ post.timestamp | timesince }} ago
             </div>
-        {% elif post.type == 'quote' %}
-            <h2>{{ post.text }}</h2>
-            <h3>{{ post.source }}</h3>
-        {% endif %}
+        </div>
     </div>
 {% endfor %}
