@@ -57,36 +57,6 @@ body{
   }
 }
 
-@media screen and (max-width: 480px){
-	#grid[data-columns]::before {
-		content: '1 .column.size-1of1';
-	}
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-	#grid[data-columns]::before {
-		content: '2 .column.size-1of2';
-	}
-}
-@media screen and (min-width: 769px) {
-	#grid[data-columns]::before {
-		content: '3 .column.size-1of3';
-	}
-}
-
-/* Again, you’re free to use and define the classes: */
-.column { float: left; }
-.size-1of1 { width: 100%; }
-.size-1of2 { width: 50%; }
-.size-1of3 { width: 33.333%; }
-
-#photo-gallery{
-  padding-left: 0px;
-  padding-right: 0px;
-  background-image: url("../images/debut_dark.png");
-  padding-bottom: 20px;
-}
-
 #imagelightbox
 {
     cursor: pointer;
@@ -208,6 +178,10 @@ body{
 
 /* For blog masonry */
 
+.masonry{
+
+}
+
 #blog-container{
   background-image: url("../images/denim.png");
 
@@ -222,8 +196,6 @@ body{
     }
 
     width: 33.33%;
-
-
 
     @media screen and (max-width: 1024px){
       width: 50%;
@@ -250,6 +222,33 @@ body{
         color: gray;
       }
       padding-top: 8px;
+    }
+  }
+}
+
+#gallery-container{
+  background-image: url("../images/debut_dark.png");
+  .item{
+    padding: 4px;
+
+    img{
+      width: 100%;
+      -webkit-box-shadow: 0px 9px 8px -7px rgba(0,0,0,0.54);
+      -moz-box-shadow: 0px 9px 8px -7px rgba(0,0,0,0.54);
+      box-shadow: 0px 9px 8px -7px rgba(0,0,0,0.54);
+    }
+    iframe{
+      width: 100%;
+    }
+
+    width: 33.33%;
+
+    @media screen and (max-width: 1024px){
+      width: 50%;
+    }
+
+    @media screen and (max-width: 768px){
+      width: 100%;
     }
   }
 }

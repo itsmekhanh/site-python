@@ -1,23 +1,29 @@
 {% extends "layout.html" %}
 {% load static %}
 {% block content %}
-    <div id="photo-gallery" class="container-fluid" style="margin-top: 10px">
-    <div id="grid" data-columns>
+    <div id="gallery-container" style="margin-top: 10px">
         {% for image in set.0 %}
-            <div style="padding: 4px">
+            <div class="item">
                 <a href="http://farm{{ image.attrib.farm }}.staticflickr.com/{{ image.attrib.server }}/{{ image.attrib.id }}_{{ image.attrib.secret }}_c.jpg" class="img-lightbox">
                     <img src="http://farm{{ image.attrib.farm }}.staticflickr.com/{{ image.attrib.server }}/{{ image.attrib.id }}_{{ image.attrib.secret }}_z.jpg"/>
                 </a>
             </div>
         {% endfor %}
     </div>
-    </div>
     <div id="imagelightbox-loading" style="display: none;"><div></div></div>
     <div id="imagelightbox-overlay" style="display: none;"></div>
-    <script src="{% static "javascripts/salvattore.min.js" %}"></script>
     <script src="{% static "javascripts/imagelightbox.min.js" %}"></script>
+    <script src="{% static "javascripts/isotope.pkgd.min.js" %}"></script>
+    <script src="{% static "javascripts/imagesloaded.pkgd.min.js"%}"></script>
     <script>
         $(function(){
+            var $container = $("#gallery-container").imagesLoaded(function(){
+                    $container.isotope({
+                    itemSelector: '.item',
+                    isAnimated: false
+                });
+            });
+
             $('a').imageLightbox(
                 {
                     onStart: function(){ $("#imagelightbox-overlay").show(); },
