@@ -7717,7 +7717,7 @@ body {
 /* line 105, ../sass/styles.scss */
 #imagelightbox-overlay {
   background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
   position: fixed;
   z-index: 9998;
   top: 0;
