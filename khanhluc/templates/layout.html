@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="{% static "stylesheets/styles.css" %}"/>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{% static "javascripts/headroom.min.js" %}"></script>
+    <script src="{% static "javascripts/jQuery.headroom.js" %}"></script>
     <link href='http://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static "stylesheets/animate.css" %}">
 </head>
 <body>
-    <div role="navigation" class="navbar navbar-default navbar-fixed-top">
+    <div id="header" role="navigation" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
@@ -63,6 +66,18 @@
   ga('create', 'UA-31362963-1', 'khanhluc.com');
   ga('send', 'pageview');
 
+  $("#header").headroom(
+        {
+          "tolerance" : 5,
+          "classes": {
+            "initial": "animated",
+            "pinned": "bounceInDown",
+            "unpinned": "slideOutUp",
+            "top": "headroom--top",
+            "notTop": "headroom--not-top"
+        }
+      }
+  );
 </script>
 </body>
 </html>
