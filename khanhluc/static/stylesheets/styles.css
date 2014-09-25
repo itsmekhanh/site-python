@@ -7947,3 +7947,8 @@ body {
     width: 100%;
   }
 }
+
+/* line 256, ../sass/styles.scss */
+.modal-content img {
+  width: 100%;
+}

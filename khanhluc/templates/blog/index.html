@@ -7,6 +7,11 @@
     <div id="page-nav">
         <a href="/blog/2"></a>
     </div>
+    <div class="modal fade" id="blog-modal" tab-index="-1" role="dialog">
+        <div class="modal-dialog">
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+    </div>
     <script src="{% static "javascripts/isotope.pkgd.min.js" %}"></script>
     <script src="{% static "javascripts/imagesloaded.pkgd.min.js"%}"></script>
     <script src="{% static "javascripts/jquery.infinitescroll.min.js" %}"></script>
@@ -38,5 +43,9 @@
                 });
             }
         );
+
+        $("body").on("click", '.modal-btn', function(e){
+            $("#modal-content").html("<img src=\""+ $(this).closest("img").prop("src") + "\"/>");
+        });
     </script>
 {% endblock %}

@@ -41,7 +41,7 @@ def getPosts(page=0):
             entry["content"] = post[u'embed']
         elif post[u'type'] == u'photo':
             entry["caption"] = post[u'caption']
-            entry["content"] = "<img src=\""+post[u'photos'][0][u'alt_sizes'][1][u'url']+"\"/>"
+            entry["content"] = "<img class=\"modal-btn\" data-toggle=\"modal\" data-target=\"#blog-modal\" src=\""+post[u'photos'][0][u'alt_sizes'][1][u'url']+"\"/>"
         elif post[u'type'] == u'link':
             entry["title"] = post[u'title']
             entry["content"] = post[u'description']
