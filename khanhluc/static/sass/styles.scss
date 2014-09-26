@@ -214,6 +214,9 @@ body{
       p{
         padding-top: 6px;
       }
+      .blog-photo{
+        margin-bottom: 10px;
+      }
     }
 
     .item-footer{
@@ -255,4 +258,13 @@ body{
 
 .modal-content img{
   width: 100%;
+}
+
+.modal-dialog{
+  width: 80%;
+  margin: 30px auto;
+  iframe{
+    width: 100%;
+    min-height: 100%;
+  }
 }

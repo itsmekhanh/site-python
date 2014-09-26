@@ -45,7 +45,20 @@
         );
 
         $("body").on("click", '.modal-btn', function(e){
-            $("#modal-content").html("<img src=\""+ $(this).closest("img").prop("src") + "\"/>");
+            var id = $(this).closest(".item-inner").data("post-id");
+            $("#modal-content").html("");
+            if(id){
+                $.ajax({
+                    type: "GET",
+                    url: "/blog/"+id+"/post/",
+                    success: function(data){
+                        $("#modal-content").html(data);
+                        var iframe = $("#modal-content iframe").attr("height", "500");
+                    }
+                })
+            }else{
+                $("#modal-content").html("<img src=\""+ $(this).closest("img").prop("src") + "\"/>");
+            }
         });
     </script>
 {% endblock %}
